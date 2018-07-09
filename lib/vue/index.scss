@@ -1,0 +1,19 @@
+@import '../../src/index.scss';
+body {
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#header {
+    background-color: #eee;
+}
+
+#body {
+    background-color: #ddd;
+}
+
+#footer {
+    background-color: red;
+}
