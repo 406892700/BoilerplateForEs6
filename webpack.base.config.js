@@ -8,9 +8,9 @@ const { VueLoaderPlugin } = require('vue-loader');
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  entry: {
-    index: './lib/index.js',
-  },
+  entry: [
+    path.resolve(__dirname, './lib/index.js'),
+  ],
   output: {
     filename: isProd ? 'index.[chunkhash].js' : 'index.[hash:6].js',
     path: path.resolve(__dirname, './dist'),
@@ -31,9 +31,26 @@ module.exports = {
       ],
     },
     {
-      test: /\.(png|jpg|gif)$/,
+      test: /\.less/,
+      use: [
+        isProd ? MiniCssExtractPlugin.loader : 'style-loader?sourceMap',
+        'css-loader?sourceMap',
+        'resolve-url-loader?sourceMap',
+        'less-loader?sourceMap',
+      ],
+    },
+    {
+      test: /\.(png|jpeg|gif|jpeg)$/,
       exclude: /^node_modules$/,
       use: 'url-loader?limit=8192&context=client&name=[path][name].[ext]',
+    },
+    {
+      test: /\.html$/,
+      use: [
+        {
+          loader: 'html-withimg-loader',
+        },
+      ],
     },
     {
       test: /\.vue$/,

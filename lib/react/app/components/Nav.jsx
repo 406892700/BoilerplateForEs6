@@ -5,8 +5,8 @@ class Nav extends Component {
     render() {
         return (
             <div>
-                <Link to="/">首页13</Link>&nbsp;&nbsp;&nbsp;
-                <Link to="/list">列表</Link>
+                <Link to="/react/">首页13</Link>&nbsp;&nbsp;&nbsp;
+                <Link to="/react/list">列表</Link>
             </div>
         )
     }
