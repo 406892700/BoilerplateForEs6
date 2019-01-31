@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    .separate-title {
+        font-size: 20px;
+        text-align: center;
+    }
+    .separate-line {
+        border-bottom: 1px solid #d00000;
+    }
+    
+    img {
+        display: block;
+        margin: 20px auto;
+        border: 10px solid #fff;
+        box-shadow: 0 0 5px #000;
+    }
+    
+}
